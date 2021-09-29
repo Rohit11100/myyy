@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery-2.2.3.min.js"></script>
+    <title>Document</title>
+    <style>
+        .hei {
+            height: 50px;
+        }
+
+        #selectoneroll,
+        #selecttworoll,
+        #selectthreeroll,
+        #selectfourroll,
+        #selectfiveroll {
+            width: 200px;
+            padding: 2px;
+            margin: 10px;
+        }
+
+        #selectonename,
+        #selecttwoname,
+        #selectthreename,
+        #selectfourname,
+        #selectfivename {
+            width: 200px;
+            padding: 2px;
+            margin: 10px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 bg-primary hei btn">
+                <a href="index.html" class="text-light linn"> Add player</a>
+            </div>
+            <div class="col-sm-6 bg-warning hei btn">
+                <a href="#" class="text-light linn"> See player</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-6" id="divonename">
+                <select name="selectonename" id="selectonename"
+                    onclick="onenameee() ;mytest() ;onetest() ;myfunroll()  "></select>
+            </div>
+            <div class="col-sm-6" id="divoneroll">
+                <select name="selectoneroll" id="selectoneroll" onclick="rollvali()">
+
+                </select>
+            </div>
+            <br>
+
+            <!-- ////////////////////////////////////////////// -->
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////222222222222222222222222 -->
+            <div class="col-sm-6" id="divtwoname">
+                <select name="selecttwoname" id="selecttwoname"
+                    onclick="twonameee() ;mytest() ; onetest() ; myfunroll()"></select>
+            </div>
+            <div class="col-sm-6" id="divtworoll">
+                <select name="selecttworoll" id="selecttworoll" onclick="rollvali()"></select>
+            </div>
+
+            <!-- /////////////////////////////////////////////// -->
+            <!-- ////////////////////////////////////////////////////////////////////////////////3333333333333333333333333333333 -->
+
+            <div class="col-sm-6" id="divthreename">
+                <select name="selectthreename" id="selectthreename"
+                    onclick="threenameee() ; mytest() ;myfunroll() ;onetest() "></select>
+            </div>
+            <div class="col-sm-6" id="divthreeroll">
+                <select name="selectthreeroll" id="selectthreeroll" onclick="rollvali()"></select>
+            </div>
+
+            <!-- /////////////////////////////////////////////////////////// -->
+            <!-- /////////////////////////////////////////////////////////////////444444444444444444444444444444444 -->
+
+            <div class="col-sm-6" id="divfourname">
+                <select name="selectfourname" id="selectfourname"
+                    onclick="fournameee() ;mytest() ; myfunroll() "></select>
+            </div>
+            <div class="col-sm-6" id="divfourroll">
+                <select name="selectfourroll" id="selectfourroll" onclick="rollvali() "></select>
+            </div>
+
+
+            <!-- ////////////////////////////////////////////////////////////////////// -->
+            <!-- //////////////////////////////////////////////////////////////////////////555555555555555555555555555555555 -->
+
+            <div class="col-sm-6" id="divfivename">
+                <select name="selectfivename" id="selectfivename"
+                    onclick="fivenameee() ; mytest()   ; myfunroll(); onetest() "></select>
+            </div>
+            <div class="col-sm-6" id="divfiveroll">
+                <select name="selectfiveroll" id="selectfiveroll" onclick="rollvali()">
+
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+
+        function onetest() {
+
+            let mainselectonename = document.getElementById('selectonename').value;
+            let mainselecttwoname = document.getElementById('selecttwoname').value;
+            let mainselectthreename = document.getElementById('selectthreename').value;
+            let mainselectfourname = document.getElementById('selectfourname').value;
+            let mainselectfivename = document.getElementById('selectfivename').value;
+
+
+          
+
+
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
+            if (mainselectonename === 'none') {
+                document.getElementById('selectonename').style.border = "thin  solid black";
+            }
+            if (mainselecttwoname === 'none') {
+                document.getElementById('selecttwoname').style.border = "thin  solid black";
+            }
+            if (mainselectthreename === 'none') {
+                document.getElementById('selectthreename').style.border = "thin  solid black";
+            }
+            if (mainselectfourname === 'none') {
+                document.getElementById('selectfourname').style.border = "thin  solid black";
+            }
+            if (mainselectfivename === 'none') {
+                document.getElementById('selectfivename').style.border = "thin  solid black";
+            }
+            if (mainselecttwoname === 'none' && mainselectthreename === 'none' && mainselectfourname === 'none' && mainselectfivename === 'none') {
+                document.getElementById('selecttwoname').style.border = "thin  solid black";
+                document.getElementById('selectthreename').style.border = "thin  solid black";
+                document.getElementById('selectfourname').style.border = "thin  solid black";
+                document.getElementById('selectfivename').style.border = "thin  solid black";
+            }
+
+        }
+
+
+
+
+
+       
+
+
+        console.log('////////////////////// name for select ////////////////');
+        let onename = JSON.parse(localStorage.getItem('player'));
+        console.log(onename.name);
+
+        let twoname = JSON.parse(localStorage.getItem('playertwo'));
+        console.log(twoname.name);
+        let threename = JSON.parse(localStorage.getItem('playerthree'));
+        console.log(threename.name);
+        let fourname = JSON.parse(localStorage.getItem('playerfour'));
+        console.log(fourname.name);
+        let fivename = JSON.parse(localStorage.getItem('playerfive'));
+        console.log(fivename.name);
+        let addDivone = document.getElementById("selectonename");
+        addDivone.innerHTML = ` 
+                    <option value='none'>Select Player</option>
+                    <option value='0'>` + onename.name + `</option>
+                    <option value='1'>` + twoname.name + `</option>
+                    <option value='2'>` + threename.name + `</option>
+                    <option value='3'>` + fourname.name + `</option>
+                    <option value='4'>` + fivename.name + `</option>`;
+
+
+
+
+
+
+        let addDivtwo = document.getElementById("selecttwoname");
+        addDivtwo.innerHTML = ` 
+        <option value='none'>Select Player</option>
+        
+                    <option value='0'>` + onename.name + `</option>
+                    <option value='1'>` + twoname.name + `</option>
+                    <option value='2'>` + threename.name + `</option>
+                    <option value='3'>` + fourname.name + `</option>
+                    <option value='4'>` + fivename.name + `</option>`;
+
+
+        let addDivthree = document.getElementById("selectthreename");
+        addDivthree.innerHTML = ` 
+        <option value='none'>Select Player</option>
+                    <option value='0'>` + onename.name + `</option>
+                    <option value='1'>` + twoname.name + `</option>
+                    <option value='2'>` + threename.name + `</option>
+                    <option value='3'>` + fourname.name + `</option>
+                    <option value='4'>` + fivename.name + `</option>`;
+
+
+        let addDivfour = document.getElementById("selectfourname");
+        addDivfour.innerHTML = ` 
+        <option value='none'>Select Player</option>
+                    <option value='0'>` + onename.name + `</option>
+                    <option value='1'>` + twoname.name + `</option>
+                    <option value='2'>` + threename.name + `</option>
+                    <option value='3'>` + fourname.name + `</option>
+                    <option value='4'>` + fivename.name + `</option>`;
+
+
+        let addDivfive = document.getElementById("selectfivename");
+        addDivfive.innerHTML = ` 
+        <option value='none'>Select Player</option>
+                    <option value='0'>` + onename.name + `</option>
+                    <option value='1'>` + twoname.name + `</option>
+                    <option value='2'>` + threename.name + `</option>
+                    <option value='3'>` + fourname.name + `</option>
+                    <option value='4'>` + fivename.name + `</option>`;
+
+
+
+
+        function rollvali() {
+            let selectoneroll = document.getElementById('selectoneroll').value;
+            let selecttworoll = document.getElementById('selecttworoll').value;
+            let selectthreeroll = document.getElementById('selectthreeroll').value;
+            let selectfourroll = document.getElementById('selectfourroll').value;
+            let selectfiveroll = document.getElementById('selectfiveroll').value;
+            console.log(selectoneroll);
+            if (selectoneroll == selecttworoll) {
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+
+            }
+
+            if (selectoneroll !== selecttworoll) {
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+
+            }
+            ///////////////////////////////////////////////////////////
+            if (selectoneroll == selectthreeroll) {
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+
+            }
+            if (selectoneroll !== selectthreeroll) {
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+            }
+            ///////////////////////////////////////////////////////////
+            if (selectoneroll == selectfourroll) {
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+            }
+            if (selectoneroll !== selectfourroll) {
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+            }
+            ///////////////////////////////////////////
+            if (selectoneroll == selectfiveroll) {
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+            }
+            if (selectoneroll !== selectfiveroll) {
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+            }
+
+            if (selecttworoll == selectoneroll) {
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+
+            }
+            if (selecttworoll !== selectoneroll) {
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+
+            }
+            ///////////////////////////////////////////////////////////
+            if (selecttworoll == selectthreeroll) {
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+
+            }
+            if (selecttworoll !== selectthreeroll) {
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+
+            }
+            //////////////////////////////////////////////////////////////////////
+            if (selecttworoll == selectfourroll) {
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+
+            }
+            if (selecttworoll !== selectfourroll) {
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+
+            }
+            ////////////////////////////////////////////////////////////////
+            if (selecttworoll == selectfiveroll) {
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+
+            }
+            if (selecttworoll !== selectfiveroll) {
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+
+            }
+            /////////////////////////////////////////////////////////////////////////
+            console.log(selectthreeroll);
+            if (selectthreeroll == selectoneroll) {
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+
+            }
+            if (selectthreeroll !== selectoneroll) {
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+
+            }
+            ///////////////////////////////////////////////////////////
+            if (selectthreeroll == selecttworoll) {
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+
+            }
+            if (selectthreeroll !== selecttworoll) {
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+
+            }
+            //////////////////////////////////////////////////////////////////////
+            if (selectthreeroll == selectfourroll) {
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+
+            }
+            if (selectthreeroll !== selectfourroll) {
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+
+            }
+            ////////////////////////////////////////////////////////////////////////////////
+            if (selectthreeroll == selectfiveroll) {
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+
+            }
+            if (selectthreeroll !== selectfiveroll) {
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+
+            }
+            console.log(selectfourroll);
+            if (selectfourroll == selectoneroll) {
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+
+            }
+            if (selectfourroll !== selectoneroll) {
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            if (selectfourroll == selecttworoll) {
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+
+            }
+            if (selectfourroll !== selecttworoll) {
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////
+            if (selectfourroll == selectthreeroll) {
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+
+            }
+            if (selectfourroll !== selectthreeroll) {
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+
+            }
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            if (selectfourroll == selectfiveroll) {
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+
+            }
+            if (selectfourroll !== selectfiveroll) {
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+
+            }
+            /////////////////////////////////////////////////////////////////////////////////
+            console.log(selectfiveroll);
+            if (selectfiveroll == selectoneroll) {
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+                document.getElementById("selectoneroll").style.border = "thick  solid red";
+
+            }
+            if (selectfiveroll !== selectoneroll) {
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+                document.getElementById("selectoneroll").style.border = "thin solid black";
+
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            if (selectfiveroll == selecttworoll) {
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+                document.getElementById("selecttworoll").style.border = "thick  solid red";
+
+            }
+            if (selectfiveroll !== selecttworoll) {
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+                document.getElementById("selecttworoll").style.border = "thin solid black";
+
+            }
+            /////////////////////////////////////////////////////////////////////////////////
+            if (selectfiveroll == selectthreeroll) {
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+                document.getElementById("selectthreeroll").style.border = "thick  solid red";
+
+            }
+            if (selectfiveroll !== selectthreeroll) {
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+                document.getElementById("selectthreeroll").style.border = "thin solid black";
+
+            }
+            //////////////////////////////////////////////////////////////////////////////
+            if (selectfiveroll == selectfourroll) {
+                document.getElementById("selectfiveroll").style.border = "thick  solid red";
+                document.getElementById("selectfourroll").style.border = "thick  solid red";
+
+            }
+            if (selectfiveroll !== selectfourroll) {
+                document.getElementById("selectfiveroll").style.border = "thin solid black";
+                document.getElementById("selectfourroll").style.border = "thin solid black";
+
+            }
+
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // batsman
+
+            if (selectoneroll == 'Batsman' && selecttworoll == 'Batsman' && selectthreeroll == 'Batsman' && selectfourroll == 'Batsman' && selectfiveroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Batsman' && selecttworoll == 'Batsman' && selectthreeroll == 'Batsman' && selectfourroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Batsman' && selecttworoll == 'Batsman' && selectthreeroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Batsman' && selecttworoll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+            }
+
+            ///////////
+            // 2345  
+
+            if (selecttworoll == 'Batsman' && selectthreeroll == 'Batsman' && selectfourroll == 'Batsman' && selectfiveroll == 'Batsman') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Batsman' && selectthreeroll == 'Batsman' && selectfourroll == 'Batsman') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Batsman' && selectthreeroll == 'Batsman') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Batsman' && selectfourroll == 'Batsman' && selectfiveroll == 'Batsman') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Batsman' && selectthreeroll == 'Batsman' && selectfiveroll == 'Batsman') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Batsman' && selectfiveroll == 'Batsman') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+
+            }
+            if (selecttworoll == 'Batsman' && selectfiveroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Batsman' && selectfourroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Batsman' && selectfourroll == 'Batsman') {
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+
+            //////////////////////////////////////////////
+            // 333333
+            if (selectthreeroll == 'Batsman' && selectfourroll == 'Batsman' && selectfiveroll == 'Batsman') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Batsman' && selectfourroll == 'Batsman') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Batsman' && selectfiveroll == 'Batsman') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+
+            if (selectthreeroll == 'Batsman' && selectfourroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Batsman' && selectfourroll == 'Batsman') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Batsman' && selectfiveroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Batsman' && selectfiveroll == 'Batsman') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfiveroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Batsman' && selectoneroll == 'Batsman') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Batsman' && selectfiveroll == 'Batsman') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            ////////////////////////////////////////////////////////////////////////////////////////
+            // boller
+
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // Bowler
+
+            if (selectoneroll == 'Bowler' && selecttworoll == 'Bowler' && selectthreeroll == 'Bowler' && selectfourroll == 'Bowler' && selectfiveroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Bowler' && selecttworoll == 'Bowler' && selectthreeroll == 'Bowler' && selectfourroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Bowler' && selecttworoll == 'Bowler' && selectthreeroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Bowler' && selecttworoll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+            }
+
+            ///////////
+            // 2345  
+
+            if (selecttworoll == 'Bowler' && selectthreeroll == 'Bowler' && selectfourroll == 'Bowler' && selectfiveroll == 'Bowler') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Bowler' && selectthreeroll == 'Bowler' && selectfourroll == 'Bowler') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Bowler' && selectthreeroll == 'Bowler') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Bowler' && selectfourroll == 'Bowler' && selectfiveroll == 'Bowler') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Bowler' && selectthreeroll == 'Bowler' && selectfiveroll == 'Bowler') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Bowler' && selectfiveroll == 'Bowler') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+
+            }
+            if (selecttworoll == 'Bowler' && selectfiveroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Bowler' && selectfourroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Bowler' && selectfourroll == 'Bowler') {
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+
+            //////////////////////////////////////////////
+            // 333333
+            if (selectthreeroll == 'Bowler' && selectfourroll == 'Bowler' && selectfiveroll == 'Bowler') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Bowler' && selectfourroll == 'Bowler') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Bowler' && selectfiveroll == 'Bowler') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+
+            if (selectthreeroll == 'Bowler' && selectfourroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Bowler' && selectfourroll == 'Bowler') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Bowler' && selectfiveroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Bowler' && selectfiveroll == 'Bowler') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfiveroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Bowler' && selectoneroll == 'Bowler') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Bowler' && selectfiveroll == 'Bowler') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            /////////////////////////////////////////////////////////////////////////////////////
+            // field
+
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // Fielder
+
+            if (selectoneroll == 'Fielder' && selecttworoll == 'Fielder' && selectthreeroll == 'Fielder' && selectfourroll == 'Fielder' && selectfiveroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Fielder' && selecttworoll == 'Fielder' && selectthreeroll == 'Fielder' && selectfourroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Fielder' && selecttworoll == 'Fielder' && selectthreeroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Fielder' && selecttworoll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+            }
+
+            ///////////
+            // 2345  
+
+            if (selecttworoll == 'Fielder' && selectthreeroll == 'Fielder' && selectfourroll == 'Fielder' && selectfiveroll == 'Fielder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Fielder' && selectthreeroll == 'Fielder' && selectfourroll == 'Fielder') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Fielder' && selectthreeroll == 'Fielder') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Fielder' && selectfourroll == 'Fielder' && selectfiveroll == 'Fielder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Fielder' && selectthreeroll == 'Fielder' && selectfiveroll == 'Fielder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Fielder' && selectfiveroll == 'Fielder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+
+            }
+            if (selecttworoll == 'Fielder' && selectfiveroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Fielder' && selectfourroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Fielder' && selectfourroll == 'Fielder') {
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+
+            //////////////////////////////////////////////
+            // 333333
+            if (selectthreeroll == 'Fielder' && selectfourroll == 'Fielder' && selectfiveroll == 'Fielder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Fielder' && selectfourroll == 'Fielder') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Fielder' && selectfiveroll == 'Fielder') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+
+            if (selectthreeroll == 'Fielder' && selectfourroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Fielder' && selectfourroll == 'Fielder') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Fielder' && selectfiveroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Fielder' && selectfiveroll == 'Fielder') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfiveroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Fielder' && selectoneroll == 'Fielder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Fielder' && selectfiveroll == 'Fielder') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            ///////////////////////////////////////////////////////////////////////////
+            // allrounder
+
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // All-Rounder
+
+            if (selectoneroll == 'All-Rounder' && selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'All-Rounder' && selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'All-Rounder' && selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'All-Rounder' && selecttworoll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+            }
+
+            ///////////
+            // 2345  
+
+            if (selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectfourroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectthreeroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectfiveroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectfourroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'All-Rounder' && selectfourroll == 'All-Rounder') {
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+
+            //////////////////////////////////////////////
+            // 333333
+            if (selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+
+            if (selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'All-Rounder' && selectfourroll == 'All-Rounder') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'All-Rounder' && selectfiveroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfiveroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'All-Rounder' && selectoneroll == 'All-Rounder') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'All-Rounder' && selectfiveroll == 'All-Rounder') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            //////////////////////////////////////////////////////////////////////////////////
+            // Wicket-Keeper
+
+            if (selectoneroll == 'Wicket-Keeper' && selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Wicket-Keeper' && selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Wicket-Keeper' && selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectoneroll == 'Wicket-Keeper' && selecttworoll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+            }
+
+            ///////////
+            // 2345  
+
+            if (selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper') {
+
+
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectthreeroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+            if (selecttworoll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper') {
+
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+                document.getElementById("selecttworoll").style.border = "thin solid red";
+
+
+            }
+
+            //////////////////////////////////////////////
+            // 333333
+            if (selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+
+            }
+
+            if (selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Wicket-Keeper' && selectfourroll == 'Wicket-Keeper') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectthreeroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+                document.getElementById("selectthreeroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfiveroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Wicket-Keeper' && selectoneroll == 'Wicket-Keeper') {
+                document.getElementById("selectoneroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+            if (selectfourroll == 'Wicket-Keeper' && selectfiveroll == 'Wicket-Keeper') {
+                document.getElementById("selectfiveroll").style.border = "thin solid red";
+                document.getElementById("selectfourroll").style.border = "thin solid red";
+
+            }
+
+
+
+
+
+
+
+
+        }
+
+
+
+    </script>
+
+    <script src="demo.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

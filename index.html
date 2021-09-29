@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="fSelect.css">
+
+    <script src="jquery-2.2.3.min.js"></script>
+
+    <script src="fSelect.js"></script>
+    <script src="ikrPluginsForfSelect.js"></script>
+    <style>
+        .hei {
+            height: 50px;
+        }
+
+        .linn {
+            text-decoration: none;
+        }
+
+        #player2 {
+            display: none;
+        }
+
+        #player3 {
+            display: none;
+        }
+
+        #player4 {
+            display: none;
+        }
+
+        #player5 {
+            display: none;
+        }
+
+        .headd {
+            padding: 50px;
+        }
+
+        .finall {
+            display: none;
+        }
+
+        .vali {
+            color: red;
+            display: none;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 bg-warning hei btn">
+                <a href="#" class="text-light linn"> Add player</a>
+            </div>
+            <div class="col-sm-6 bg-primary hei btn">
+                <a href="team.html" class="text-light linn"> See player</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="vh-100" style="background-color: #eee;" id="player1">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Choose Team</p>
+
+                                    <form class="mx-1 mx-md-4 needs-validation" id="myform" name='formone' novalidate>
+
+                                        <input type="text"  name="id" value="p1" class="form-control" hidden />
+
+                                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0  has-validation">
+                                                <label class="form-label" for="name"> Name</label>
+                                                <input type="text" id="nameone" name="name" class="form-control"
+                                                    required />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Age">Age</label>
+                                                <input type="number" id="ageone" name="Age" class="form-control"
+                                                    min="16" value="0" />
+
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    age must be greater than 16.
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+
+                                                <label class="form-label" for="Height">Height</label>
+                                                <input type="number" id="heightone" name="height" class="form-control"
+                                                    min="162" value="0" />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    height must be greater than 162
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Roll">Roll </label>
+                                                <select name="rollone" id="cboStudentone" class="form-control" onclick="myfunc()"></select>
+
+                                                <h5 class="vali" id="hone">plz select Player role</h5>
+
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">Save Data</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="vh-100" style="background-color: #eee;" id="player2">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Choose Team</p>
+
+                                    <form class="mx-1 mx-md-4 needs-validation" id="myformtwo" name='formtwo'
+                                        novalidate>
+
+                                        <input type="text"  name="id" value="p2" class="form-control" hidden />
+
+                                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0  has-validation">
+                                                <label class="form-label" for="name"> Name</label>
+                                                <input type="text" id="nametwo" name="name" class="form-control"
+                                                    required />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Age">Age</label>
+                                                <input type="number" id="agetwo" name="Age" class="form-control"
+                                                    min="16" value="0" />
+
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    age must be greater than 16.
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+
+                                                <label class="form-label" for="Height">Height</label>
+                                                <input type="number" id="heighttwo" name="height" class="form-control"
+                                                    min="162" value="0" />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    height must be greater than 162
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Roll">Roll </label>
+                                                <select name="rolltwo" id="cboStudenttwo" onclick="myfunc()" class="form-control"></select>
+
+                                                <h5 class="vali" id="htwo">plz select Player role</h5>
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <h5>Player one Added</h5>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">Save Data</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vh-100" style="background-color: #eee;" id="player3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Choose Team</p>
+
+                                    <form class="mx-1 mx-md-4 needs-validation" id="myformthree" name='formthree'
+                                        novalidate>
+
+                                        <input type="text"  name="id" value="p3" class="form-control" hidden />
+
+                                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0  has-validation">
+                                                <label class="form-label" for="name"> Name</label>
+                                                <input type="text" id="namethree" name="name" class="form-control"
+                                                    required />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Age">Age</label>
+                                                <input type="number" id="agethree" name="Age" class="form-control"
+                                                    min="16" value="0" />
+
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    age must be greater than 16.
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+
+                                                <label class="form-label" for="Height">Height</label>
+                                                <input type="number" id="heightthree" name="height" class="form-control"
+                                                    min="162" value="0" />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    height must be greater than 162
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Roll">Roll </label>
+                                                <select name="rollthree" id="cboStudentthree"
+                                                    class="form-control" onclick="myfunc()" ></select>
+
+                                                <h5 class="vali" id="hthree">plz select Player role</h5>
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <h5>Player Two is Added</h5>
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">Save Data</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="vh-100" style="background-color: #eee;" id="player4">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Choose Team</p>
+
+                                    <form class="mx-1 mx-md-4 needs-validation" id="myformfour" name='formfour'
+                                        novalidate>
+
+                                        <input type="text"  name="id" value="p4" class="form-control" hidden />
+
+                                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0  has-validation">
+                                                <label class="form-label" for="name"> Name</label>
+                                                <input type="text" id="namefour" name="name" class="form-control"
+                                                    required />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Age">Age</label>
+                                                <input type="number" id="agefour" name="Age" class="form-control"
+                                                    min="16" value="0" />
+
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    age must be greater than 16.
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+
+                                                <label class="form-label" for="Height">Height</label>
+                                                <input type="number" id="heightfour" name="height" class="form-control"
+                                                    min="162" value="0" />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    height must be greater than 162
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Roll">Roll </label>
+                                                <select name="rollfour" id="cboStudentfour"
+                                                    class="form-control"  onclick="myfunc()" ></select>
+
+                                                <h5 class="vali" id="hfour">plz select Player role</h5>
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <h5>Player three is added</h5>
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">Save Data</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="vh-100" style="background-color: #eee;" id="player5">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Choose Team</p>
+
+                                    <form class="mx-1 mx-md-4 needs-validation" id="myformfive" name='formfive'
+                                        novalidate>
+
+                                        <input type="text"  name="id" value="p5" class="form-control" hidden />
+
+                                        <div class="d-flex flex-row align-items-center mb-4 form-group">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0  has-validation">
+                                                <label class="form-label" for="name"> Name</label>
+                                                <input type="text" id="namefive" name="name" class="form-control"
+                                                    required />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Age">Age</label>
+                                                <input type="number" id="agefive" name="Age" class="form-control"
+                                                    min="16" value="0" />
+
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    age must be greater than 16.
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+
+                                                <label class="form-label" for="Height">Height</label>
+                                                <input type="number" id="heightfive" name="height" class="form-control"
+                                                    min="162" value="0" />
+                                                <div class="valid-feedback">
+                                                    All done
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    height must be greater than 162
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0 form-group">
+                                                <label class="form-label" for="Roll">Roll </label>
+                                                <select name="rollfive" id="cboStudentfive"
+                                                    class="form-control"  onclick="myfunc()" ></select>
+
+                                                <h5 class="vali" id="hfive">plz select Player role</h5>
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <h5>player four is Added</h5>
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-primary btn-lg">Save Data</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container finall" id="finall">
+        <h1 class="bg-light text-dark headd"> All five Team Member Added </h1>
+
+
+        <h2 class="bg-light text-dark headd">Want to add more click here</h2>
+
+
+        <button class="btn btn-outline-primary" onclick="finalll()"> Add Player</button>
+    </div>
+
+    <script>
+
+
+
+
+
+
+        function handleSubmit(event) {
+            let player1 = document.getElementById('player1');
+            let player2 = document.getElementById('player2');
+
+
+            let nameval = document.formone.nameone.value;
+            let rollval = document.formone.rollone.value;
+            let hone = document.getElementById('hone');
+
+
+            
+            // let selectone =document.getElementById('selectone').value;
+
+
+
+            event.preventDefault();
+
+            const data = new FormData(event.target);
+
+            const value = Object.fromEntries(data.entries());
+
+            value.topics = data.getAll("rollone");
+
+
+
+            if (nameval !== '') {
+                if (rollval == 'Batsman' || rollval == 'Bowler' || rollval == 'All-Rounder' || rollval == 'Wicket-Keeper' || rollval == 'Fielder') {
+
+                    console.log(nameval);
+                    console.log({ value });
+                    console.log(rollval);
+                    localStorage.setItem('player', JSON.stringify(value));
+
+                   
+                    player1.style.display = 'none';
+                    player2.style.display = 'block';
+                    hone.style.display = 'none';
+                    document.getElementById('myform').reset();
+
+
+                }
+
+            }
+            if (rollval !== 'Batsman' || rollval !== 'Bowler' || rollval !== 'All-Rounder' || rollval !== 'Wicket-Keeper' || rollval !== 'Fielder') {
+                hone.style.display = 'block';
+
+            }
+            if (rollval == 'Batsman' || rollval == 'Bowler' || rollval == 'All-Rounder' || rollval == 'Wicket-Keeper' || rollval == 'Fielder') {
+                hone.style.display = 'none';
+
+            }
+            // localStorage.setItem('player', JSON.stringify(value));
+            // player1.style.display = 'none';
+            // player2.style.display = 'block';
+            // document.getElementById('myform').reset();
+
+
+
+
+        }
+        
+        /////////////////////////////////////////////
+        // player2
+
+        function handleSubmittwo(event) {
+            let player2 = document.getElementById('player2');
+            let player3 = document.getElementById('player3');
+
+
+
+
+            let namevaltwo = document.formtwo.nametwo.value;
+            let rollvaltwo = document.formtwo.rolltwo.value;
+            let htwo = document.getElementById('htwo');
+            event.preventDefault();
+
+            const data = new FormData(event.target);
+
+            const value = Object.fromEntries(data.entries());
+
+            value.topics = data.getAll("rolltwo");
+
+            if (namevaltwo !== '') {
+                if (rollvaltwo == 'Batsman' || rollvaltwo == 'Bowler' || rollvaltwo == 'All-Rounder' || rollvaltwo == 'Wicket-Keeper' || rollvaltwo == 'Fielder') {
+
+                    console.log(namevaltwo);
+                    console.log({ value });
+                    console.log(rollvaltwo);
+                    
+
+                    localStorage.setItem('playertwo', JSON.stringify(value));
+                    player2.style.display = 'none';
+                    player3.style.display = 'block';
+
+
+                    htwo.style.display = 'none';
+                    document.getElementById('myformtwo').reset();
+
+
+                }
+
+            }
+            if (rollvaltwo !== 'Batsman' || rollvaltwo !== 'Bowler' || rollvaltwo !== 'All-Rounder' || rollvaltwo !== 'Wicket-Keeper' || rollvaltwo !== 'Fielder') {
+                htwo.style.display = 'block';
+
+            }
+
+        }
+        ////////////////////////////////////////////////////
+
+        function handleSubmitthree(event) {
+            let player3 = document.getElementById('player3');
+            let player4 = document.getElementById('player4');
+
+            let namevalthree = document.formthree.namethree.value;
+            let rollvalthree = document.formthree.rollthree.value;
+            let hthree = document.getElementById('hthree');
+            event.preventDefault();
+
+            const data = new FormData(event.target);
+
+            const value = Object.fromEntries(data.entries());
+
+            value.topics = data.getAll("rollthree");
+
+            if (namevalthree !== '') {
+                if (rollvalthree == 'Batsman' || rollvalthree == 'Bowler' || rollvalthree == 'All-Rounder' || rollvalthree == 'Wicket-Keeper' || rollvalthree == 'Fielder') {
+
+                    console.log(namevalthree);
+                    console.log({ value });
+                    console.log(rollvalthree);
+                    
+
+                    localStorage.setItem('playerthree', JSON.stringify(value));
+                    player3.style.display = 'none';
+                    player4.style.display = 'block';
+                    hthree.style.display = 'none';
+                    document.getElementById('myformthree').reset();
+
+
+
+
+                }
+
+            }
+            if (rollvalthree !== 'Batsman' || rollvalthree !== 'Bowler' || rollvalthree !== 'All-Rounder' || rollvalthree !== 'Wicket-Keeper' || rollvalthree !== 'Fielder') {
+                hthree.style.display = 'block';
+
+            }
+
+
+
+
+        }
+
+        function handleSubmitfour(event) {
+            let player4 = document.getElementById('player4');
+            let player5 = document.getElementById('player5');
+
+
+            let namevalfour = document.formfour.namefour.value;
+            let rollvalfour = document.formfour.rollfour.value;
+            let hfour = document.getElementById('hfour');
+            event.preventDefault();
+
+            const data = new FormData(event.target);
+
+            const value = Object.fromEntries(data.entries());
+
+            value.topics = data.getAll("rollfour");
+            if (namevalfour !== '') {
+                if (rollvalfour == 'Batsman' || rollvalfour == 'Bowler' || rollvalfour == 'All-Rounder' || rollvalfour == 'Wicket-Keeper' || rollvalfour == 'Fielder') {
+
+                    console.log(namevalfour);
+                    console.log({ value });
+                    console.log(rollvalfour);
+                    
+
+                    localStorage.setItem('playerfour', JSON.stringify(value));
+                    player4.style.display = 'none';
+                    player5.style.display = 'block';
+                    hfour.style.display = 'none';
+                    document.getElementById('myformfour').reset();
+
+
+
+
+
+
+                }
+
+            }
+            if (rollvalfour !== 'Batsman' || rollvalfour !== 'Bowler' || rollvalfour !== 'All-Rounder' || rollvalfour !== 'Wicket-Keeper' || rollvalfour !== 'Fielder') {
+                hfour.style.display = 'block';
+
+            }
+
+
+
+
+
+        }
+
+        function handleSubmitfive(event) {
+            let player5 = document.getElementById('player5');
+            let finall = document.getElementById('finall');
+
+            let namevalfive = document.formfive.namefive.value;
+            let rollvalfive = document.formfive.rollfive.value;
+            let hfive = document.getElementById('hfive');
+            event.preventDefault();
+
+            const data = new FormData(event.target);
+
+            const value = Object.fromEntries(data.entries());
+
+            value.topics = data.getAll("rollfive");
+            if (namevalfive !== '') {
+                if (rollvalfive == 'Batsman' || rollvalfive == 'Bowler' || rollvalfive == 'All-Rounder' || rollvalfive == 'Wicket-Keeper' || rollvalfive == 'Fielder') {
+
+                    console.log(namevalfive);
+                    console.log({ value });
+                    console.log(rollvalfive);
+                    
+
+                    localStorage.setItem('playerfive', JSON.stringify(value));
+                    player5.style.display = 'none';
+                    finall.style.display = 'block';
+                    hfive.style.display = 'none';
+                    document.getElementById('myformfive').reset();
+
+
+
+
+
+
+
+
+                }
+
+            }
+            if (rollvalfive !== 'Batsman' || rollvalfive !== 'Bowler' || rollvalfive !== 'All-Rounder' || rollvalfive !== 'Wicket-Keeper' || rollvalfive !== 'Fielder') {
+                hfive.style.display = 'block';
+
+            }
+
+
+
+
+        }
+        function finalll() {
+            let player1 = document.getElementById('player1');
+            let finall = document.getElementById('finall');
+            player1.style.display = 'block';
+            finall.style.display = 'none'
+
+        }
+
+
+
+        function myfunc(){
+            let rollval = document.formone.rollone.value;
+            let hone = document.getElementById('hone');
+
+            console.log('sdhjfkhfdfbsdfskj');
+
+            if (rollval == 'Batsman' || rollval == 'Bowler' || rollval == 'All-Rounder' || rollval == 'Wicket-Keeper' || rollval == 'Fielder') {
+                hone.style.display = 'none';
+
+            }
+        }
+
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })()
+
+
+        $(document).ready(function () {
+            let alldata = []
+            let mydata = ['Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper', 'Fielder']
+            for (var i = 0; i < mydata.length; i++) {
+                alldata.push({
+                    studentId: mydata[i],
+                    Name: mydata[i],
+                });
+            }
+            // $('#btnload').click(function (){
+
+
+            $("#cboStudentone").ikrLoadfSelectCombo({
+                List: alldata,
+                DisplayText: "Name", //Display Property name
+                OtherProperties: "studentId,Name", //OtherProperties means those properties of object that we need for use
+                PrimaryKey: "studentId", //PrimaryKey
+            });
+        });
+        ////////////////////////////////////////////
+        $(document).ready(function () {
+            let alldata = []
+            let mydata = ['Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper', 'Fielder']
+            for (var i = 0; i < mydata.length; i++) {
+                alldata.push({
+                    studentId: mydata[i],
+                    Name: mydata[i],
+                });
+            }
+            // $('#btnload').click(function (){
+
+
+            $("#cboStudenttwo").ikrLoadfSelectCombo({
+                List: alldata,
+                DisplayText: "Name", //Display Property name
+                OtherProperties: "studentId,Name", //OtherProperties means those properties of object that we need for use
+                PrimaryKey: "studentId", //PrimaryKey
+            });
+        });
+        /////////////////////////////////////////////////////////////
+        $(document).ready(function () {
+            let alldata = []
+            let mydata = ['Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper', 'Fielder']
+            for (var i = 0; i < mydata.length; i++) {
+                alldata.push({
+                    studentId: mydata[i],
+                    Name: mydata[i],
+                });
+            }
+            // $('#btnload').click(function (){
+
+
+            $("#cboStudentthree").ikrLoadfSelectCombo({
+                List: alldata,
+                DisplayText: "Name", //Display Property name
+                OtherProperties: "studentId,Name", //OtherProperties means those properties of object that we need for use
+                PrimaryKey: "studentId", //PrimaryKey
+            });
+        });
+
+        //////////////////////////////////////////////////
+        $(document).ready(function () {
+            let alldata = []
+            let mydata = ['Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper', 'Fielder']
+            for (var i = 0; i < mydata.length; i++) {
+                alldata.push({
+                    studentId: mydata[i],
+                    Name: mydata[i],
+                });
+            }
+            // $('#btnload').click(function (){
+
+
+            $("#cboStudentfour").ikrLoadfSelectCombo({
+                List: alldata,
+                DisplayText: "Name", //Display Property name
+                OtherProperties: "studentId,Name", //OtherProperties means those properties of object that we need for use
+                PrimaryKey: "studentId", //PrimaryKey
+            });
+        });
+        $(document).ready(function () {
+            let alldata = []
+            let mydata = ['Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper', 'Fielder']
+            for (var i = 0; i < mydata.length; i++) {
+                alldata.push({
+                    studentId: mydata[i],
+                    Name: mydata[i],
+                });
+            }
+            // $('#btnload').click(function (){
+
+
+            $("#cboStudentfive").ikrLoadfSelectCombo({
+                List: alldata,
+                DisplayText: "Name", //Display Property name
+                OtherProperties: "studentId,Name", //OtherProperties means those properties of object that we need for use
+                PrimaryKey: "studentId", //PrimaryKey
+            });
+        });
+
+
+
+
+
+
+        const form = document.getElementById('myform');
+        form.addEventListener("submit", handleSubmit);
+
+        ///////////////////////////////
+        // formtwo
+        const formtwo = document.getElementById('myformtwo');
+        formtwo.addEventListener("submit", handleSubmittwo);
+        ////////////////////////////////////////
+        // formthree
+        const formthree = document.getElementById('myformthree');
+        formthree.addEventListener("submit", handleSubmitthree);
+
+        //////////////////////////////////////////////
+        // formfour
+        const formfour = document.getElementById('myformfour');
+        formfour.addEventListener("submit", handleSubmitfour);
+
+        ///////////////////////////////////////////////////////////////////
+        // formfive
+        const formfive = document.getElementById('myformfive');
+        formfive.addEventListener("submit", handleSubmitfive);
+
+    </script>
+
+</body>
+
+</html>
